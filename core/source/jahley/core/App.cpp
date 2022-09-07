@@ -2,7 +2,6 @@
 // Created: 26 Jan 2019 8:47:47 pm
 // Copyright (c) 2019, HurleyWorks
 
-
 #include "App.h"
 
 namespace Jahley
@@ -14,7 +13,6 @@ namespace Jahley
         errorCallback (std::bind (&App::onFatalError, this, std::placeholders::_1)),
         preCrashCallback (std::bind (&App::preCrash, this)),
         log (errorCallback, preCrashCallback)
-       
     {
     }
 
@@ -26,7 +24,6 @@ namespace Jahley
     {
         // let the client initialize
         onInit();
-
     }
 
     // preCrash

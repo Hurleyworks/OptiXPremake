@@ -6,7 +6,6 @@
 
 #include "Log.h"
 
-
 namespace Jahley
 {
 	class App

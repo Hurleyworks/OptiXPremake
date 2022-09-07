@@ -65,6 +65,7 @@ project "Core"
 		SOURCE_DIR,
 		BERSERKO_DIR,
 		
+		THIRD_PARTY_DIR,
 		THIRD_PARTY_DIR .. "g3log/src",
 	}
 	
@@ -109,3 +110,4 @@ project "Core"
         defines {"USE_DEBUG_EXCEPTIONS"}
     
 	
+   include "sandbox/HelloWorld"
