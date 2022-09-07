@@ -26,9 +26,6 @@ namespace Jahley
 	protected:
 		App();
 
-		bool isRunning = true;
-		std::chrono::time_point<std::chrono::system_clock> startTime = std::chrono::system_clock::now();
-
 	private:
 		FatalErrorCallback errorCallback = nullptr;
 		PreCrashCallback preCrashCallback = nullptr;

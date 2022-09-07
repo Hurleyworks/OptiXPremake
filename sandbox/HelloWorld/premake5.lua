@@ -30,8 +30,7 @@ project  "HelloWorld"
 	filter "system:windows"
 		staticruntime "On"
 		systemversion "latest"
-		defines {"_CRT_SECURE_NO_WARNINGS", "__WINDOWS_WASAPI__", "NOMINMAX",
-				  "NANOGUI_USE_OPENGL", "NANOGUI_GLAD",
+		defines {"_CRT_SECURE_NO_WARNINGS", "NOMINMAX"
 		}
 		
 		disablewarnings { "5030" , "4305", "4316", "4267"}
