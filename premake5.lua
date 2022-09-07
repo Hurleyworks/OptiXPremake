@@ -2,12 +2,11 @@
 -- https://github.com/JohannesMP/Premake-for-Beginners
 
 -- Include the premake5 CUDA module
-
+require("premake5-cuda")
 
 workspace "OptiXPremake"
 	architecture "x64"
 	location ("builds")
-	require("premake5-cuda")
 
 if _ACTION == "vs2019" then
    location ("builds/VisualStudio2019")

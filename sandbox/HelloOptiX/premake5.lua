@@ -1,4 +1,4 @@
-	require("../../premake5-cuda")
+--	require("../../premake5-cuda")
 
 local ROOT = "../../"
 
@@ -24,11 +24,11 @@ project  "HelloOptiX"
       SOURCE_DIR .. "**.cpp",
     }
 	
-	 buildcustomizations "BuildCustomizations/CUDA 11.7"
+  buildcustomizations "BuildCustomizations/CUDA 11.7"
 
   externalwarnings "Off" -- thrust gives a lot of warnings
-  cudaFiles { "D:/ActiveWorks/OpenSource/hurleyworks/OptiXPremake/sandbox/HelloOptiX/source/exe/cu/main.cu" } -- files to be compiled into binaries
-  cudaPTXFiles { "sandbox/HelloOptiX/exe/ptx/**.cu" } -- files to be compiled into ptx
+  cudaFiles { "source/exe/cu/**.cu" } -- files to be compiled into binaries
+  cudaPTXFiles { "sandbox/HelloOptiX/source/exe/ptx/**.cu" } -- files to be compiled into ptx
   cudaKeep "On" -- keep temporary output files
   cudaFastMath "On"
   cudaRelocatableCode "On"
