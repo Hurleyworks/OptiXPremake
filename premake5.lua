@@ -2,7 +2,7 @@
 -- https://github.com/JohannesMP/Premake-for-Beginners
 
 -- Include the premake5 CUDA module
-require("premake5-cuda")
+require('premake5-cuda')
 
 workspace "OptiXPremake"
 	architecture "x64"
