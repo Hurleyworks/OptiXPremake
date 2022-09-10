@@ -110,4 +110,5 @@ project "Core"
     
 	
    include "sandbox/HelloWorld"
-   include "sandbox/HelloOptiX"
+   include "sandbox/OptixPremake"
+   include "sandbox/CudaCompiler"

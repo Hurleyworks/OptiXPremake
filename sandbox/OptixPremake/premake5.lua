@@ -2,7 +2,7 @@
 
 local ROOT = "../../"
 
-project  "HelloOptiX"
+project  "OptixPremake"
 	if _ACTION == "vs2019" then
 		cppdialect "C++17"
 		location (ROOT .. "builds/VisualStudio2019/projects")
@@ -29,19 +29,13 @@ project  "HelloOptiX"
   externalwarnings "Off" -- thrust gives a lot of warnings
   
   -- absolute path from solution root
-  cudaFiles { "sandbox/HelloOptiX/source/exe/cu/**.cu" } -- files to be compiled into binaries
-  cudaPTXFiles { "sandbox/HelloOptiX/source/exe/ptx/*.cu" } -- files to be compiled into ptx
-  cudaKeep "On" -- keep temporary output files
+  cudaPTXFiles { "sandbox/OptixPremake/**.cu" } -- files to be compiled into ptx
+  --cudaKeep "On" -- keep temporary output files
   cudaFastMath "On"
   cudaRelocatableCode "On"
   cudaVerbosePTXAS "On"
   cudaMaxRegCount "32"
   
-	includedirs
-	{
-	
-	}
-	
 	filter "system:windows"
 		staticruntime "On"
 		systemversion "latest"
@@ -63,11 +57,8 @@ project  "HelloOptiX"
 		  },
 		}
 		
-		 -- Let's compile for all supported architectures (and also in parallel with -t0)
-  cudaCompilerOptions {"-arch=sm_52", "-gencode=arch=compute_52,code=sm_52", "-gencode=arch=compute_60,code=sm_60",
-    "-gencode=arch=compute_61,code=sm_61", "-gencode=arch=compute_70,code=sm_70",
-    "-gencode=arch=compute_75,code=sm_75", "-gencode=arch=compute_80,code=sm_80",
-    "-gencode=arch=compute_86,code=sm_86", "-gencode=arch=compute_86,code=compute_86", "-t0"} 
+
+  cudaCompilerOptions {"-arch=sm_75", "-gencode=arch=compute_75,code=sm_75","-t0", "--expt-relaxed-constexpr"} 
 
   cudaLinkerOptions { "-g" }
 		

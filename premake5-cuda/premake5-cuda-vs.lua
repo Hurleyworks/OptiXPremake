@@ -102,9 +102,9 @@ premake.override(premake.vstudio.vc2010.elements, "project", function(base, prj)
   local calls = base(prj)
 
   --* Only enabled if cudaProject defined.
-  if (prj.current.cudaFiles ~= nil) then
+  --if (prj.current.cudaFiles ~= nil) then
     table.insertafter(calls, premake.vstudio.vc2010.files, cudaProjectProps)
-  end
+  --end
 
   return calls
 end)

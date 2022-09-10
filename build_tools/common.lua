@@ -16,8 +16,8 @@ local ROOT = "../"
 	local CUDA_EXTRA_DIR = "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.7/extras/cupti/include"
 	local CUDA_LIB_DIR =  "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.7/lib/x64"
 	
-	--local OPTIX_ROOT = "C:/ProgramData/NVIDIA Corporation"
-	--local OPTIX7_INCLUDE_DIR = OPTIX_ROOT .. "/OptiX SDK 7.4.0/include"
+	local OPTIX_ROOT = "C:/ProgramData/NVIDIA Corporation"
+	local OPTIX7_INCLUDE_DIR = OPTIX_ROOT .. "/OptiX SDK 7.4.0/include"
 	
 	includedirs
 	{
@@ -26,11 +26,12 @@ local ROOT = "../"
 		
 		CUDA_INCLUDE_DIR,
 		CUDA_EXTRA_DIR,
-		--OPTIX7_INCLUDE_DIR,
+		OPTIX7_INCLUDE_DIR,
 		
 		THIRD_PARTY_DIR,
 		THIRD_PARTY_DIR .. "g3log/src",
-		--THIRD_PARTY_DIR .. "optiXUtil/src",
+		THIRD_PARTY_DIR .. "optiXUtil/src",
+		THIRD_PARTY_DIR .. "reproc++",
 		
 	}
 	
@@ -57,7 +58,10 @@ local ROOT = "../"
 		{ 
 			"Core",
 			"g3log",
-			--"optiXUtil",
+			"optiXUtil",
+			"reproc++",
+			-- for reproc++
+			"ws2_32",
 			
 			--cuda
 			"cudart_static",
@@ -82,7 +86,10 @@ local ROOT = "../"
 		{ 
 			"Core",
 			"g3log",
-			--"optiXUtil",
+			"optiXUtil",
+			"reproc++",
+			-- for reproc++
+			"ws2_32",
 			
 			--cuda
 			"cudart_static",
