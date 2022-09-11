@@ -21,7 +21,7 @@ class Application : public Jahley::App
             // hardwired to my machine obviously
             args.push_back ("D:/ActiveWorks/OpenSource/hurleyworks/OptiXPremake/sandbox/CudaCompiler/source/kernels_0.cu");
             args.push_back ("--ptx");
-           // args.push_back ("--extended-lambda");
+            args.push_back ("--extended-lambda");
             args.push_back ("--use_fast_math");
             args.push_back ("--cudart");
             args.push_back ("shared");
@@ -29,11 +29,16 @@ class Application : public Jahley::App
             args.push_back ("c++17");
             args.push_back ("-rdc");
             args.push_back ("true");
-           // args.push_back ("--expt-relaxed-constexpr");
+            args.push_back ("--expt-relaxed-constexpr");
             args.push_back ("--machine");
             args.push_back ("64");
             args.push_back ("--gpu-architecture");
             args.push_back ("sm_75");
+#ifndef NDEBUG
+            // FIXME waiting for crash in Debug mode to be fixed
+            args.push_back ("--debug");
+            args.push_back ("--device-debug");
+#endif
 
             // NB if the ptx files are not being saved, first thing to do is check to make sure
             // this path is correct. It will be wrong if you have updated to a new version of vs2019
