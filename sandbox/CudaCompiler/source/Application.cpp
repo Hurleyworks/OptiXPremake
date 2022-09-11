@@ -18,6 +18,7 @@ class Application : public Jahley::App
             // path to nvcc exe
             std::string exe ("C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.7/bin/nvcc.exe");
             args.push_back (exe);
+            // hardwired to my machine obviously
             args.push_back ("D:/ActiveWorks/OpenSource/hurleyworks/OptiXPremake/sandbox/CudaCompiler/source/kernels_0.cu");
             args.push_back ("--ptx");
             args.push_back ("--extended-lambda");
