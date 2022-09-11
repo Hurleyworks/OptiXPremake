@@ -25,8 +25,8 @@ RT_PIPELINE_LAUNCH_PARAMETERS PipelineLaunchParameters1 plp;
 
 CUDA_DEVICE_KERNEL void RT_RG_NAME (rg0)()
 {
-    float3 value = make_float3 (0.0f, 0.0f, 0.0f);
-    Pipeline1Payload0Signature::trace (
+    uint32_t value = 0;
+    optixu::trace<Pipeline0Payload0Signature> (
         plp.travHandle,
         make_float3 (0, 0, 0), make_float3 (0, 0, 1), 0.0f, INFINITY, 0.0f,
         0xFF, OPTIX_RAY_FLAG_NONE,

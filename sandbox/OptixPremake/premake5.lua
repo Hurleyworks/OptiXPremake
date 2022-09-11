@@ -58,7 +58,7 @@ project  "OptixPremake"
 		}
 		
 
-  cudaCompilerOptions {"-arch=sm_75", "-gencode=arch=compute_75,code=sm_75","-t0", "--expt-relaxed-constexpr"} 
+  cudaCompilerOptions {"-arch=sm_75", "-gencode=arch=compute_75,code=sm_75","-t0", "--expt-relaxed-constexpr", "--std c++17"} 
 
   cudaLinkerOptions { "-g" }
 		
